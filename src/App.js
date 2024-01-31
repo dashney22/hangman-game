@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import Word from './src/components/Word';
-import Alphabet from './src/components/Alphabet';
-import Hangman from './src/components/Hangman';
-import Status from './src/components/Status';
-import HelpModal from './src/components/HelpModal';
-import RestartButton from './src/components/RestartButton';
+import Word from './components/Word';
+import Alphabet from './components/Alphabet';
+import Hangman from './components/Hangman';
+import Status from './components/Status';
+import HelpModal from './components/HelpModal';
+import RestartButton from './components/RestartButton';
 
 const App = () => {
   const [targetWord, setTargetWord] = useState("HANGMAN"); // Default word, can be replaced later
@@ -29,7 +29,7 @@ const App = () => {
     const missingLetters = targetWord.split("").filter(letter => !guessedLetters.includes(letter));
     if (missingLetters.length === 0) {
       setGameStatus("won");
-    } else if (incorrectGuesses >= 6) { // Max incorrect guesses
+    } else if (incorrectGuesses >= 9) { // Max incorrect guesses
       setGameStatus("lost");
     }
   };
